@@ -9,7 +9,7 @@ export default {
 
       return ResponseHandler.success(res, data);
     } catch (error) {
-      ResponseHandler.error(res, error);
+      return ResponseHandler.error(res, error);
     }
   },
 };
