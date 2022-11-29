@@ -13,9 +13,15 @@ if (!fs.existsSync(UPLOAD_DIR)) {
 
 const get = (req, res) => {
   try {
-    return ResponseHandler.success(res, data);
+    const { filename } = req.params;
+
+    let filepath = `${UPLOAD_DIR}/${filename}`;
+
+    console.log("🚀🚀🚀 ~ get ~ filepath", filepath);
+
+    res.status(200).sendFile(filepath);
   } catch (error) {
-    return ResponseHandler.error(res, error);
+    res.status(400).send("Not found");
   }
 };
 
