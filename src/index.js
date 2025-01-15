@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", HomeRoute);
 app.use("/", UploadRoute);
-
+console.log("first");
 app.listen(PORT, () => {
   console.log("server running", PORT);
 });
